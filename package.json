@@ -20,7 +20,9 @@
     "url": "https://github.com/chanzed/PureUI/issues"
   },
   "homepage": "https://github.com/chanzed/PureUI#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
   "dependencies": {
     "vue": "^2.6.11"
   }
