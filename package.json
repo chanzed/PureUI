@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/chanzed/PureUI/issues"
   },
-  "homepage": "https://github.com/chanzed/PureUI#readme"
+  "homepage": "https://github.com/chanzed/PureUI#readme",
+  "devDependencies": {
+    "vue": "^2.6.11"
+  }
 }
