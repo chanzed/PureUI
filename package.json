@@ -20,7 +20,8 @@
     "url": "https://github.com/chanzed/PureUI/issues"
   },
   "homepage": "https://github.com/chanzed/PureUI#readme",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "vue": "^2.6.11"
   }
 }
