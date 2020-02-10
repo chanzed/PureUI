@@ -1,6 +1,7 @@
 <template>
   <button class="p-button" :class="`icon-${iconPosition}`">
-    <p-icon class='icon' :name='icon'></p-icon>
+    <p-icon v-if="icon" :name="icon"></p-icon>
+    <p-icon name="loading" class="loading"></p-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -22,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 $button-height: 32px;
 $font-size: 14px;
 $button-bg: white;
@@ -33,10 +34,10 @@ $border-color: #999;
 $border-color-hover: #666;
 @keyframes spin {
   0% {
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
   100% {
-    rotate: 360deg;
+    transform: rotate(360deg);
   }
 }
 .p-button {
@@ -79,6 +80,9 @@ $border-color-hover: #666;
       order: 2;
       margin-left: 0.3em;
     }
+  }
+  .loading {
+    animation: spin 1s infinite linear;
   }
 }
 </style>
