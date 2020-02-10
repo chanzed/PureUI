@@ -22,6 +22,7 @@
   "homepage": "https://github.com/chanzed/PureUI#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.1",
+    "chai": "^4.2.0",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.25.0",
     "vue-template-compiler": "^2.6.11"
