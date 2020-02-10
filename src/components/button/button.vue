@@ -1,8 +1,6 @@
 <template>
   <button class="p-button" :class="`icon-${iconPosition}`">
-    <svg v-if="icon" class="icon">
-      <use :xlink:href="`#i-${icon}`" />
-    </svg>
+    <p-icon class='icon' :name='icon'></p-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -33,6 +31,14 @@ $border-radius: 4px;
 $color: #333;
 $border-color: #999;
 $border-color-hover: #666;
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
 .p-button {
   font-size: $font-size;
   height: $button-height;
@@ -55,10 +61,7 @@ $border-color-hover: #666;
   &:focus {
     outline: none;
   }
-  .icon {
-    width: 1em;
-    height: 1em;
-  }
+
   &.icon-left {
     .content {
       order: 2;
