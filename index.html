@@ -24,7 +24,8 @@
             <p-input value='你的名字'></p-input>
             <p-input readonly></p-input>
             <p-input disabled value='你的名字'></p-input>
-            <p-input error="姓名只能输入两个字" @change='xxx'></p-input>
+            <p-input error="姓名只能输入两个字" ></p-input>
+            <p-input v-model="message"></p-input>{{message}}
         </div>
     </div>
     <script src="//at.alicdn.com/t/font_1518140_tjeghazl7sf.js"></script>

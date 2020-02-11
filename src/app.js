@@ -12,12 +12,6 @@ new Vue({
     el: '#app',
     data: {
         loading1: true,
+        message: 'hi'
     },
-    methods: {
-        xxx(event, a, b) {
-            console.log('event', event)
-            console.log('a', a)
-            console.log('b', b)
-        }
-    }
 })
