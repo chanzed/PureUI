@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PureUI</title>
     <style>
-    
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #app {
+            margin: 0 20px;
+        }
     </style>
-    </head>
+
+</head>
+
 <body>
     <div id="app">
         <!-- <p-button icon='settings' icon-position='right'>按钮abc</p-button>
@@ -27,15 +36,15 @@
             <p-input error="姓名只能输入两个字" ></p-input>
             <p-input v-model="message"></p-input>{{message}}
         </div> -->
-        <div>
-            <p-row>
-                <p-col span='1'>1</p-col>
-                <p-col span='2'>2</p-col>
-                <p-col span='2'>3</p-col>
-            </p-row>
+        <div style='border: 1px solid black;'>
+                <p-row gutter='20' align="right">
+                    <p-col span='6'>24</p-col>
+                    <p-col span='6'>24</p-col>
+                </p-row>
         </div>
     </div>
     <script src="//at.alicdn.com/t/font_1518140_tjeghazl7sf.js"></script>
     <script src="./src/app.js"></script>
 </body>
+
 </html>
