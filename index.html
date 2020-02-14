@@ -11,8 +11,15 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         #app {
             margin: 0 20px;
+        }
+
+        .col-item {
+            height: 100px;
+            border: 1px solid red;
+            background-color: grey;
         }
     </style>
 
@@ -37,10 +44,12 @@
             <p-input v-model="message"></p-input>{{message}}
         </div> -->
         <div style='border: 1px solid black;'>
-                <p-row gutter='20' align="right">
-                    <p-col span='6'>24</p-col>
-                    <p-col span='6'>24</p-col>
-                </p-row>
+            <p-row gutter='20' align="left">
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+            </p-row>
         </div>
     </div>
     <script src="//at.alicdn.com/t/font_1518140_tjeghazl7sf.js"></script>
