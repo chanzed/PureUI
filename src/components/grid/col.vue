@@ -45,9 +45,6 @@ export default {
       validator: validator
     }
   },
-  mounted() {
-    console.log(this.narrowPc)
-  },
   data() {
     return {
       gutter: 0,
