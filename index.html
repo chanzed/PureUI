@@ -21,6 +21,24 @@
             border: 1px solid red;
             background-color: grey;
         }
+
+        .container {
+            height: 400px;
+            border: 1px solid green;
+        }
+
+        .footer,
+        .header {
+            height: 50px;
+            background-color: lightblue;
+        }
+
+        .content {
+            background-color: lightgrey;
+        }
+        .sider {
+            width: 200px;
+        }
     </style>
 
 </head>
@@ -45,11 +63,25 @@
         </div> -->
         <div style='border: 1px solid black;'>
             <p-row gutter='20' align="left">
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}" :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
+                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
+                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
+                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
+                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
+                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
             </p-row>
+        </div>
+        <div>
+            <p-container class="container">
+                <p-header class="header">header</p-header>
+                <p-container>
+                    <p-sider class="sider" closable>sider</p-sider>
+                    <p-content class="content">content</p-content>
+                </p-container>
+                <p-footer class="footer">footer</p-footer>
+            </p-container>
         </div>
     </div>
     <script src="//at.alicdn.com/t/font_1518140_tjeghazl7sf.js"></script>
