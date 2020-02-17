@@ -33,8 +33,32 @@ new Vue({
         message: 'hi'
     },
     methods: {
-        showToast() {
-            this.$toast('你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字')
+        showToast1() {
+            this.$toast('你的名字', {
+                autoClose: false,
+                position: 'top',
+                closeButton: {
+                    text: '充值',
+                }
+            })
+        },
+        showToast2() {
+            this.$toast('你的名字', {
+                autoClose: false,
+                position: 'bottom',
+                closeButton: {
+                    text: '充值',
+                }
+            })
+        },
+        showToast3() {
+            this.$toast('你的名字', {
+                autoClose: false,
+                position: 'middle',
+                closeButton: {
+                    text: '充值',
+                }
+            })
         }
     }
 })
