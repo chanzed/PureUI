@@ -10,6 +10,9 @@ import Header from './components/container/header.vue'
 import Content from './components/container/content.vue'
 import Footer from './components/container/footer.vue'
 import Sider from './components/container/sider.vue'
+import Toast from './components/toast/toastPlugin'
+Vue.use(Toast)
+
 
 Vue.component('p-button', Button)
 Vue.component('p-icon', Icon)
@@ -29,4 +32,9 @@ new Vue({
         loading1: true,
         message: 'hi'
     },
+    methods: {
+        showToast() {
+            this.$toast('你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字你的名字')
+        }
+    }
 })
