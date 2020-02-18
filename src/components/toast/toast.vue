@@ -2,7 +2,8 @@
   <div class="wrapper" :class="`position-${position}`">
     <div class="p-toast">
       <div class="message" :class="{ line: !autoClose }">
-        <slot></slot>
+        <div v-if="enableHTML" v-html="$slots.default[0]"></div>
+        <slot v-else></slot>
       </div>
       <div class="close" v-if="!autoClose" @click="close">{{this.closeButton.text}}</div>
     </div>
@@ -31,13 +32,16 @@ export default {
       validator(value) {
         return ['top', 'middle', 'bottom'].indexOf(value) !== -1
       }
+    },
+    enableHTML: {
+      type: Boolean,
+      default: false,
     }
   },
   mounted() {
     if (this.autoClose) {
       setTimeout(() => {
         this.close()
-        console.log(typeof this.callback)
       }, this.autoClose * 1000)
     }
   },
@@ -49,7 +53,6 @@ export default {
       this.$emit('close')
       this.$el.remove()
       this.$destroy()
-      console.log('close')
     },
   },
 }

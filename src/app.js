@@ -52,7 +52,8 @@ new Vue({
             })
         },
         showToast3() {
-            this.$toast('你的名字', {
+            this.$toast('<a href="https://www.baidu.com">百度一下你就知道</a>', {
+                enableHTML: true,
                 autoClose: false,
                 position: 'middle',
                 closeButton: {
