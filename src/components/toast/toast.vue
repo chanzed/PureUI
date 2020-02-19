@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="`position-${position}`">
+  <div class="wrapper" :class="{[`position-${position}`]: position}">
     <div class="p-toast">
       <div class="message" :class="{ line: !autoClose }">
         <div v-if="enableHTML" v-html="$slots.default[0]"></div>
@@ -50,8 +50,8 @@ export default {
       if (typeof this.closeButton.callback === 'function') {
         this.closeButton.callback()
       }
-      this.$emit('close')
       this.$el.remove()
+      this.$emit('close')
       this.$destroy()
     },
   },

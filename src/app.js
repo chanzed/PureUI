@@ -52,7 +52,7 @@ new Vue({
             })
         },
         showToast3() {
-            this.$toast('<a href="https://www.baidu.com">百度一下你就知道</a>', {
+            this.$toast('<a href="https://www.baidu.com">百度一下你就知道</a><strong>hello world</strong>', {
                 enableHTML: true,
                 autoClose: false,
                 position: 'middle',
