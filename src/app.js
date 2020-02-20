@@ -16,6 +16,7 @@ import TabsHead from './components/tabs/tabs-head.vue'
 import TabsItem from './components/tabs/tabs-item.vue'
 import TabsBody from './components/tabs/tabs-body.vue'
 import TabsPane from './components/tabs/tabs-pane.vue'
+import Popover from './components/popover/popover.vue'
 
 Vue.use(Toast)
 
@@ -36,6 +37,7 @@ Vue.component('p-tabs-head', TabsHead)
 Vue.component('p-tabs-item', TabsItem)
 Vue.component('p-tabs-body', TabsBody)
 Vue.component('p-tabs-pane', TabsPane)
+Vue.component('p-popover', Popover)
 
 new Vue({
     el: '#app',
