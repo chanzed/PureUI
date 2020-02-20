@@ -13,7 +13,7 @@
         }
 
         #app {
-            margin: 0 20px;
+            margin: 0 200px;
         }
 
         .col-item {
@@ -45,47 +45,18 @@
 
 <body>
     <div id="app">
-        <button @click="showToast1">click me</button>
-        <button @click="showToast2">click me</button>
-        <button @click="showToast3">click me</button>
-        <!-- <p-button icon='settings' icon-position='right'>按钮abc</p-button>
-        <p-button :loading=loading1 icon='settings' icon-position='right' @click="loading1=!loading1">按钮abc</p-button>
-        <p-button icon='settings'>按钮abc</p-button>
-        <p-icon name='settings'></p-icon>
-        <p-button-group>
-            <p-button icon='left'>上一页</p-button>
-            <p-button>更多</p-button>
-            <p-button icon='right'>下一页</p-button>
-        </p-button-group>
-        <div>
-            <p-input value='你的名字'></p-input>
-            <p-input readonly></p-input>
-            <p-input disabled value='你的名字'></p-input>
-            <p-input error="姓名只能输入两个字" ></p-input>
-            <p-input v-model="message"></p-input>{{message}}
-        </div> -->
-        <!-- <div style='border: 1px solid black;'>
-            <p-row gutter='20' align="left">
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
-                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
-                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
-                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-                <p-col span="24" class="col-item" :ipad="{ span: 12 }" :narrow-pc="{span: 8, offset: 4}"
-                    :pc="{span: 6, offset: 10}" :wide-pc="{span: 4, offset: 4,}" :extra-pc="{span: 2}"></p-col>
-            </p-row>
-        </div>
-        <div>
-            <p-container class="container">
-                <p-header class="header">header</p-header>
-                <p-container>
-                    <p-sider class="sider" closable>sider</p-sider>
-                    <p-content class="content">content</p-content>
-                </p-container>
-                <p-footer class="footer">footer</p-footer>
-            </p-container>
-        </div> -->
+        <p-tabs :selected.sync="selected">
+            <p-tabs-head>
+                <p-tabs-item disabled name="beauty">美女</p-tabs-item>
+                <p-tabs-item name="sports">运动</p-tabs-item>
+                <p-tabs-item name="finance">财经</p-tabs-item>
+            </p-tabs-head>
+            <p-tabs-body>
+                <p-tabs-pane name="beauty">这是美女</p-tabs-pane>
+                <p-tabs-pane name="sports">这是运动</p-tabs-pane>
+                <p-tabs-pane name="finance">这是财经</p-tabs-pane>
+            </p-tabs-body>
+        </p-tabs>
     </div>
     <script src="//at.alicdn.com/t/font_1518140_tjeghazl7sf.js"></script>
     <script src="./src/app.js"></script>

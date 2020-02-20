@@ -11,6 +11,12 @@ import Content from './components/container/content.vue'
 import Footer from './components/container/footer.vue'
 import Sider from './components/container/sider.vue'
 import Toast from './components/toast/toastPlugin'
+import Tabs from './components/tabs/tabs.vue'
+import TabsHead from './components/tabs/tabs-head.vue'
+import TabsItem from './components/tabs/tabs-item.vue'
+import TabsBody from './components/tabs/tabs-body.vue'
+import TabsPane from './components/tabs/tabs-pane.vue'
+
 Vue.use(Toast)
 
 
@@ -25,12 +31,18 @@ Vue.component('p-header', Header)
 Vue.component('p-content', Content)
 Vue.component('p-footer', Footer)
 Vue.component('p-sider', Sider)
+Vue.component('p-tabs', Tabs)
+Vue.component('p-tabs-head', TabsHead)
+Vue.component('p-tabs-item', TabsItem)
+Vue.component('p-tabs-body', TabsBody)
+Vue.component('p-tabs-pane', TabsPane)
 
 new Vue({
     el: '#app',
     data: {
         loading1: true,
-        message: 'hi'
+        message: 'hi',
+        selected: 'sports',
     },
     methods: {
         showToast1() {
