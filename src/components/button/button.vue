@@ -2,7 +2,7 @@
   <button class="p-button" :class="`icon-${iconPosition}`" @click="$emit('click')">
     <p-icon v-if="icon && !loading" :name="icon"></p-icon>
     <p-icon v-if="loading" name="loading" class="loading"></p-icon>
-    <div class="content hello">
+    <div class="content">
       <slot></slot>
     </div>
   </button>

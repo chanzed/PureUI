@@ -60,8 +60,32 @@ export default {
   display: inline-flex;
 }
 .content-wrapper {
-  border: 1px solid red;
+  border: 1px solid #999;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  margin-top: -10px;
   position: absolute;
+  max-width: 40em;
+  word-break: break-all;
   transform: translateY(-100%);
+  // box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.75);
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.75));
+  background-color: white;
+  &::after {
+    position: absolute;
+    top: calc(100% - 1px);
+    display: block;
+    content: '';
+    border: 10px solid transparent;
+    border-top-color: white;
+  }
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    border: 10px solid transparent;
+    border-top-color: #999;
+    top: 100%;
+  }
 }
 </style>
