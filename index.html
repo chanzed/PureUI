@@ -13,7 +13,7 @@
         }
 
         #app {
-            margin: 50px 20px;
+            margin: 100px 200px;
         }
 
         .col-item {
@@ -44,6 +44,25 @@
     <div id="app">
         <div style="border: 1px solid green; padding: 10px; overflow: hidden;">
         <p-popover>
+            <template v-slot:content>
+                我是popover
+            </template>
+            <p-button>点我</p-button>
+        </p-popover>
+        <p-popover position="bottom">
+            <template v-slot:content>
+                我是popover
+            </template>
+            <p-button>点我</p-button>
+        </p-popover>
+
+        <p-popover position="left">
+            <template v-slot:content>
+                我是popover
+            </template>
+            <p-button>点我</p-button>
+        </p-popover>
+        <p-popover position="right">
             <template v-slot:content>
                 我是popover
             </template>
