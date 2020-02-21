@@ -5,10 +5,12 @@
       :class="`position-${position}`"
       ref="contentWrapper"
       v-if="visible"
+      @mouseenter="clearTimer"
+      @mouseleave="delayClose"
     >
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper" class="trigger-wrapper" @click="onClick">
+    <span ref="triggerWrapper" class="trigger-wrapper">
       <slot></slot>
     </span>
   </div>
@@ -20,6 +22,7 @@ export default {
   data() {
     return {
       visible: false,
+      timer: "",
     }
   },
   props: {
@@ -29,6 +32,29 @@ export default {
       validator(value) {
         return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
       }
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value) {
+        return ['click', 'hover'].indexOf(value) >= 0
+      }
+    }
+  },
+  mounted() {
+    if (this.trigger === "click") {
+      this.$refs.triggerWrapper.addEventListener("click", this.onClick)
+    } else {
+      this.$refs.triggerWrapper.addEventListener("mouseenter", this.open)
+      this.$refs.triggerWrapper.addEventListener("mouseleave", this.delayClose)
+    }
+  },
+  destroyed() {
+    if (this.trigger === "click") {
+      this.$refs.triggerWrapper && this.$refs.triggerWrapper.removeEventListener("click", this.onClick)
+    } else {
+      this.$refs.triggerWrapper && this.$refs.triggerWrapper.removeEventListener("mouseenter", this.open)
+      this.$refs.triggerWrapper && this.$refs.triggerWrapper.removeEventListener("mouseleave", this.delayClose)
     }
   },
   methods: {
@@ -52,6 +78,9 @@ export default {
       document.removeEventListener('click', this.eventHandler)
     },
     open() {
+      if (this.timer) {
+        window.clearTimeout(this.timer);
+      }
       this.visible = true
       this.$nextTick(() => {
         this.positionPopover()
@@ -59,25 +88,27 @@ export default {
       })
     },
     positionPopover() {
-      const contentWrapper = this.$refs.contentWrapper
-      const triggerWrapper = this.$refs.triggerWrapper
+      const { contentWrapper, triggerWrapper } = this.$refs
       document.body.append(contentWrapper)
       const { top, left, height: ht, width: tw } = triggerWrapper.getBoundingClientRect()
       const { height: hc } = contentWrapper.getBoundingClientRect()
-      if (this.position === 'top') {
-        contentWrapper.style.left = left + scrollX + 'px'
-        contentWrapper.style.top = top + scrollY + 'px'
-      } else if (this.position === 'bottom') {
-        contentWrapper.style.left = left + scrollX + 'px'
-        contentWrapper.style.top = top + scrollY + ht + 'px'
-      } else if (this.position === 'left') {
-        contentWrapper.style.left = left + scrollX + 'px'
-        contentWrapper.style.top = top + scrollY - (hc - ht) / 2 + 'px'
-      } else if (this.position === 'right') {
-        contentWrapper.style.left = left + scrollX + tw + 'px'
-        contentWrapper.style.top = top + scrollY - (hc - ht) / 2 + 'px'
+      const positions = {
+        top: { top: top + scrollY, left: left + scrollX, },
+        bottom: { top: top + scrollY + ht, left: left + scrollX, },
+        left: { top: top + scrollY - (hc - ht) / 2, left: left + scrollX, },
+        right: { top: top + scrollY - (hc - ht) / 2, left: left + scrollX + tw, },
       }
-    }
+      contentWrapper.style.left = positions[this.position].left + 'px'
+      contentWrapper.style.top = positions[this.position].top + 'px'
+    },
+    delayClose(event) {
+      this.timer = setTimeout(() => {
+        this.close()
+      }, 200)
+    },
+    clearTimer() {
+      window.clearTimeout(this.timer)
+    },
   }
 }
 </script>
