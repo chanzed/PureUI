@@ -1,6 +1,10 @@
-$font-size: 12px;
+$font-size: 14px;
 $height: 32px;
 $border-color: #999;
+$border-color-light: lighten($border-color, 50%);
 $border-color-hover: #666;
 $border-radius: 4px;
-$box-shadow-color: rgba(0, 0, 0, 0.5);
+$box-shadow-color: rgba(0, 0, 0, 0.75);
+.box-shadow {
+  box-shadow: 0 0 3px 0 $border-color;
+}
