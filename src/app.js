@@ -17,6 +17,8 @@ import TabsItem from './components/tabs/tabs-item.vue'
 import TabsBody from './components/tabs/tabs-body.vue'
 import TabsPane from './components/tabs/tabs-pane.vue'
 import Popover from './components/popover/popover.vue'
+import Cascader from './components/cascader/cascader.vue'
+import CascaderItem from './components/cascader/cascader-item.vue'
 
 Vue.use(Toast)
 
@@ -38,6 +40,8 @@ Vue.component('p-tabs-item', TabsItem)
 Vue.component('p-tabs-body', TabsBody)
 Vue.component('p-tabs-pane', TabsPane)
 Vue.component('p-popover', Popover)
+Vue.component('p-cascader', Cascader)
+Vue.component('p-cascader-item', CascaderItem)
 
 new Vue({
     el: '#app',
@@ -45,6 +49,22 @@ new Vue({
         loading1: true,
         message: 'hi',
         selected: 'sports',
+        sourceItem: [
+            {
+                name: '广东省',
+                children: [
+                    { name: '广州市', children: [{ name: '越秀区'}, {name: '番禺区'}, {name: '黄浦区', }], },
+                    { name: '肇庆市', children: [{ name: '高要区'}, {name: '鼎湖区'}, {name: '端州区', }], },
+                ],
+            },
+            {
+                name: '浙江省',
+                children: [
+                    { name: '杭州市', children: [{ name: '上城区'}, {name: '下城区'}, {name: '余杭区', }], },
+                    { name: '温州市', children: [{ name: '鹿城区'}, {name: '龙湾区'}, {name: '洞头区', }], },
+                ],
+            },
+        ]
     },
     methods: {
         showToast1() {
